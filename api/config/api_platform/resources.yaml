@@ -3,6 +3,15 @@ resources:
     App\Entity\Book:
         attributes:
             filters: ['book.search_filter']
+            normalization_context:
+                groups: ['group:list']
+            denormalization_context:
+                groups: ['group:write']
+        itemOperations:
+            get:
+                method: 'GET'
+                normalization_context:
+                    groups: ['group:read']
         properties:
             reviews:
                 subresource:

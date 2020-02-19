@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
@@ -22,12 +23,16 @@ class Author
     /**
      * @var string Book isbn
      *
+     * @Groups({"book:read", "book:list"})
+     *
      * @ORM\Column
      */
     public $firstname;
 
     /**
      * @var string Book title
+     *
+     * @Groups({"book:read", "book:list"})
      *
      * @ORM\Column
      */

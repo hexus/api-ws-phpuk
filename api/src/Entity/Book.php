@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
@@ -12,6 +13,8 @@ class Book
 {
     /**
      * @var int The entity Id
+     *
+     * @Groups({"book:read"})
      *
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -22,12 +25,16 @@ class Book
     /**
      * @var string Book isbn
      *
+     * @Groups({"group:read", "group:write"})
+     *
      * @ORM\Column(type="string")
      */
     public $isbn = '';
 
     /**
      * @var string Book title
+     *
+     * @Groups({"group:read", "group:write", "group:list"})
      *
      * @ORM\Column(type="string")
      */
@@ -36,12 +43,16 @@ class Book
     /**
      * @var string Book abstract
      *
+     * @Groups({"group:read", "group:write"})
+     *
      * @ORM\Column(type="string")
      */
     public $abstract = '';
 
     /**
      * @var string Book description
+     *
+     * @Groups({"group:read", "group:write"})
      *
      * @ORM\Column(type="text")
      */
@@ -59,6 +70,8 @@ class Book
 
     /**
      * @var string Book publication date
+     *
+     * @Groups({"group:read", "group:write", "group:list"})
      *
      * @ORM\Column(type="datetime")
      */
