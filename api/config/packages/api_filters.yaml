@@ -1,0 +1,11 @@
+services:
+    book.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments:
+            $properties:
+                isbn: exact
+                title: partial
+        tags: ['api_platform.filter']
+        autowire: false
+        autoconfigure: false
+        public: false

@@ -1,6 +1,8 @@
 resources:
     App\Entity\Greeting: ~
     App\Entity\Book:
+        attributes:
+            filters: ['book.search_filter']
         properties:
             reviews:
                 subresource:
