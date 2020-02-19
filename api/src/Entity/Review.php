@@ -40,7 +40,7 @@ class Review
     public $content;
 
     /**
-     * @var string Book abstract
+     * @var integer
      *
      * @ORM\Column(type="integer")
      */
@@ -159,7 +159,6 @@ class Review
     {
         $this->rate = $rate;
     }
-
 
 
 }
