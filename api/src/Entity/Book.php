@@ -52,6 +52,7 @@ class Book
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
+     * @Groups({"book_read", "book_write"})
      */
     private $author;
 

@@ -24,7 +24,7 @@ class Author
      * @var string Author first name
      *
      * @ORM\Column
-     * @Groups({"author_read", "author_write"})
+     * @Groups({"author_read", "author_write", "book_read"})
      */
     public $firstname;
 
@@ -32,7 +32,7 @@ class Author
      * @var string Author last name
      *
      * @ORM\Column
-     * @Groups({"author_read", "author_write"})
+     * @Groups({"author_read", "author_write", "book_read"})
      */
     public $lastname = '';
 
