@@ -1,0 +1,12 @@
+App\Entity\Author:
+    properties:
+        firstname:
+            - Length:
+                min: 0
+                max: 255
+        lastname:
+            - Length:
+                 min: 0
+                 max: 255
+        birthday:
+            -   Date: ~

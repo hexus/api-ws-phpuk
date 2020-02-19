@@ -1,2 +1,4 @@
 resources:
     App\Entity\Greeting: ~
+    App\Entity\Book: ~
+    App\Entity\Author: ~
