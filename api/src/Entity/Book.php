@@ -25,7 +25,7 @@ class Book
     /**
      * @var string Book isbn
      *
-     * @Groups({"group:read", "group:write"})
+     * @Groups({"book:read", "book:write"})
      *
      * @ORM\Column(type="string")
      */
@@ -34,7 +34,7 @@ class Book
     /**
      * @var string Book title
      *
-     * @Groups({"group:read", "group:write", "group:list"})
+     * @Groups({"book:read", "book:write", "book:list"})
      *
      * @ORM\Column(type="string")
      */
@@ -43,7 +43,7 @@ class Book
     /**
      * @var string Book abstract
      *
-     * @Groups({"group:read", "group:write"})
+     * @Groups({"book:read", "book:write"})
      *
      * @ORM\Column(type="string")
      */
@@ -52,13 +52,17 @@ class Book
     /**
      * @var string Book description
      *
-     * @Groups({"group:read", "group:write"})
+     * @Groups({"book:read", "book:write"})
      *
      * @ORM\Column(type="text")
      */
     public $description = '';
 
     /**
+     * The author of the book.
+     *
+     * @Groups({"book:read", "book:list"})
+     *
      * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
      */
     private $author;
@@ -71,7 +75,7 @@ class Book
     /**
      * @var string Book publication date
      *
-     * @Groups({"group:read", "group:write", "group:list"})
+     * @Groups({"book:read", "book:write", "book:list"})
      *
      * @ORM\Column(type="datetime")
      */

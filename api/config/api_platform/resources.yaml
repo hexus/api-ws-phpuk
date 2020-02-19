@@ -4,18 +4,22 @@ resources:
         attributes:
             filters: ['book.search_filter']
             normalization_context:
-                groups: ['group:list']
+                groups: ['book:list']
             denormalization_context:
-                groups: ['group:write']
+                groups: ['book:write']
         itemOperations:
             get:
                 method: 'GET'
                 normalization_context:
-                    groups: ['group:read']
+                    groups: ['book:read']
+            put:
+                method: 'PUT'
+            delete:
+                method: 'DELETE'
         properties:
             reviews:
                 subresource:
-                    resourceClass: ‘App\Entity\Review’
+                    resourceClass: App\Entity\Review
                     maxDepth: 1
                     collection: true
     App\Entity\Author:
@@ -26,7 +30,7 @@ resources:
         properties:
             books:
                 subresource:
-                    resourceClass: ‘App\Entity\Book’
+                    resourceClass: App\Entity\Book
                     maxDepth: 1
                     collection: true
     App\Entity\Review: ~
