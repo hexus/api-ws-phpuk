@@ -5,17 +5,5 @@ App\Entity\Book:
             - Isbn: ~
         title:
             - NotBlank: ~
-#        abstract:
-#            - Length:
-#                min: 0
-#                max: 255
-#        description:
-#            - Length:
-#                 min: 0
-#                 max: 255
-#        author:
-#            - Length:
-#                min: 0
-#                max: 255
         publicationDate:
             -   Date: ~

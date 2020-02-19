@@ -2,5 +2,3 @@ App\Entity\Author:
     properties:
         firstname:
             - NotBlank: ~
-        birthday:
-            -   Date: ~

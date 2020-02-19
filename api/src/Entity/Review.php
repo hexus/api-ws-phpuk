@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  */
-class Author
+class Review
 {
     /**
      * @var int The entity Id
@@ -30,20 +30,28 @@ class Author
      *
      * @ORM\Column
      */
-    public $lastname = '';
+    public $lastname;
 
     /**
      * @var string Book abstract
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="text")
      */
-    public $birthday;
+    public $content;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Book", mappedBy="author")
+     * @ORM\Column(type="datetime")
      */
-    private $books;
+    public $created_at;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Book", mappedBy="reviews")
+     */
+    private $book;
+
+    /**
+     * @return int
+     */
     public function getId(): int
     {
         return $this->id;
@@ -84,34 +92,51 @@ class Author
     /**
      * @return string
      */
-    public function getBirthday(): \DateTime
+    public function getContent(): string
     {
-        return $this->birthday;
+        return $this->content;
     }
 
     /**
-     * @param string $birthday
+     * @param string $content
      */
-    public function setBirthday(\DateTime $birthday): void
+    public function setContent(string $content): void
     {
-        $this->birthday = $birthday;
+        $this->content = $content;
     }
 
     /**
      * @return mixed
      */
-    public function getBooks()
+    public function getCreatedAt()
     {
-        return $this->books;
+        return $this->created_at;
     }
 
     /**
-     * @param mixed $books
+     * @param mixed $created_at
      */
-    public function setBooks($books): void
+    public function setCreatedAt($created_at): void
     {
-        $this->books = $books;
+        $this->created_at = $created_at;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBook()
+    {
+        return $this->book;
+    }
+
+    /**
+     * @param mixed $book
+     */
+    public function setBook($book): void
+    {
+        $this->book = $book;
+    }
+
 
 
 }
