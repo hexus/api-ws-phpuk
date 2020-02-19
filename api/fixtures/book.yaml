@@ -4,7 +4,7 @@ App\Entity\Book:
         title: <sentence(4)>
         abstract: <sentence(10)>
         description: <text()>
-        author: <name()>
+        author: "@author_2"
         publicationDate: <datetime()>
 
     book_test:
@@ -12,5 +12,5 @@ App\Entity\Book:
         title: <sentence(4)>
         abstract: <sentence(10)>
         description: <text()>
-        author: <name()>
+        author: '@author_1'
         publicationDate: <datetime()>

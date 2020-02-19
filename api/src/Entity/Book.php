@@ -135,7 +135,7 @@ class Book
     /**
      * @return string
      */
-    public function getAuthor(): string
+    public function getAuthor(): Author
     {
         return $this->author;
     }
@@ -143,7 +143,7 @@ class Book
     /**
      * @param string $author
      */
-    public function setAuthor(string $author): void
+    public function setAuthor(Author $author): void
     {
         $this->author = $author;
     }

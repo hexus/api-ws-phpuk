@@ -40,6 +40,13 @@ class Review
     public $content;
 
     /**
+     * @var string Book abstract
+     *
+     * @ORM\Column(type="integer")
+     */
+    public $rate;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     public $created_at;
@@ -135,6 +142,22 @@ class Review
     public function setBook($book): void
     {
         $this->book = $book;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRate(): string
+    {
+        return $this->rate;
+    }
+
+    /**
+     * @param string $rate
+     */
+    public function setRate(string $rate): void
+    {
+        $this->rate = $rate;
     }
 
 
