@@ -129,17 +129,17 @@ class Review
     }
 
     /**
-     * @return mixed
+     * @return Book|null
      */
-    public function getBook()
+    public function getBook(): ?Book
     {
         return $this->book;
     }
 
     /**
-     * @param mixed $book
+     * @param Book $book
      */
-    public function setBook($book): void
+    public function setBook(?Book $book): void
     {
         $this->book = $book;
     }
