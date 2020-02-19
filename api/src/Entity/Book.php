@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity
@@ -23,6 +24,7 @@ class Book
      * @var string Book isbn
      *
      * @ORM\Column(type="string")
+     * @Groups({"book_read", "book_write"})
      */
     public $isbn = '';
 
@@ -30,6 +32,7 @@ class Book
      * @var string Book title
      *
      * @ORM\Column(type="string")
+     * @Groups({"book_read", "book_write"})
      */
     public $title = '';
 
@@ -61,6 +64,7 @@ class Book
      * @var string Book publication date
      *
      * @ORM\Column(type="datetime")
+     * @Groups({"book_read", "book_write"})
      */
     public $publicationDate;
 
