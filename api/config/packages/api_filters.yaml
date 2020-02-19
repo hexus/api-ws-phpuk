@@ -6,6 +6,6 @@ services:
                 isbn: exact
                 title: partial
         tags: ['api_platform.filter']
-        autowire: false,
+        autowire: false
         autoconfigure: false
         public: false
