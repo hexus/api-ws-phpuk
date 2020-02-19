@@ -47,11 +47,14 @@ class Book
     public $description = '';
 
     /**
-     * @var string Book author
-     *
-     * @ORM\Column(type="string")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
      */
-    public $author = '';
+    private $author;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Review", mappedBy="book")
+     */
+    private $reviews;
 
     /**
      * @var string Book publication date
