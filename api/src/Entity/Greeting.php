@@ -21,7 +21,9 @@ class Greeting
     private $id;
 
     /**
-     * @var string A nice person
+     * A nice person's name
+     *
+     * @var string
      *
      * @ORM\Column
      */

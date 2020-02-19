@@ -1,0 +1,7 @@
+App\Entity\Book:
+    properties:
+        isbn:
+            - NotBlank: ~
+            - Isbn: ~
+        title:
+            - NotBlank: ~
