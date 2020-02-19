@@ -1,6 +1,12 @@
 resources:
     App\Entity\Greeting: ~
-    App\Entity\Book: ~
+    App\Entity\Book:
+        properties:
+            reviews:
+                subresource:
+                    resourceClass: ‘App\Entity\Review’
+                    maxDepth: 1
+                    collection: true
     App\Entity\Author:
         attributes:
             order:
