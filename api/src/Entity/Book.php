@@ -56,9 +56,9 @@ class Book
     /**
      * @var string Book publication date
      *
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
-    public $publicationDate = '';
+    public $publicationDate;
 
     public function getId(): int
     {
@@ -148,7 +148,7 @@ class Book
     /**
      * @return string
      */
-    public function getPublicationDate(): string
+    public function getPublicationDate(): \DateTime
     {
         return $this->publicationDate;
     }
@@ -156,7 +156,7 @@ class Book
     /**
      * @param string $publicationDate
      */
-    public function setPublicationDate(string $publicationDate): void
+    public function setPublicationDate(\DateTime $publicationDate): void
     {
         $this->publicationDate = $publicationDate;
     }

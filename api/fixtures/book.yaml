@@ -5,7 +5,7 @@ App\Entity\Book:
         abstract: <sentence(10)>
         description: <text()>
         author: <name()>
-        publicationDate: <date()>
+        publicationDate: <datetime()>
 
     book_test:
         isbn: '9790456981541'
@@ -13,4 +13,4 @@ App\Entity\Book:
         abstract: <sentence(10)>
         description: <text()>
         author: <name()>
-        publicationDate: <date()>
+        publicationDate: <datetime()>
